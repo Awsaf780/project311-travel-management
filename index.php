@@ -36,8 +36,8 @@
  </head>
 
  <body>
- 	<div class="head">
-		 
+ 	<div class="header">
+ 		<?php include 'header_before.php'; ?>
  	</div>
 
  	<div class="landing">
@@ -59,9 +59,9 @@
 
  				</div>
  			</form>
- 			<?php echo $error; ?>
+ 			<?php echo '<p style="color:white">'.$error.'</p>'; ?>
  			<div style="color: white">
- 				<h4>or <a style="color: white" href="signup.php">Sign Up</a></h4>
+ 				<h4>or <a style="color: white; text-decoration: none" href="signup.php">Sign Up</a></h4>
  			</div>
 
  		</div>
@@ -69,7 +69,10 @@
 
  	<div class="wrapper">
 
-		<div><h4 class="subtitle">Featured Packages</h4><hr class="divider"></div>
+		<div>
+			<h4 class="subtitle">Featured Packages</h4><hr class="divider">
+		</div>
+
 		<div class="feature-package">
 			<?php 
 			if (mysqli_num_rows($package_result) > 0 ) {
@@ -80,17 +83,20 @@
 								<h5><b>'.$row['name'].'</b></h5>
 								<h6>'.$row['duration'].' Days - BDT '.$row['cost'].'</h6>
 							</div>
-							</div>';
+						  </div>';
 				}
 			}
 
 		 ?>	
+		</div>
 	</div>
 
 	<div class="wrapper">
+
 		<div>
 			<h4 class="subtitle">Popular Bus Routes</h4><hr class="divider">
 		</div>
+
 		<div>
 			
 		</div>
