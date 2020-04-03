@@ -1,0 +1,48 @@
+.subtitle {
+	text-align: center;
+	color: grey;
+}
+
+.card {
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	max-width: 200px;
+}
+
+.card:hover {
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+	padding: 2px 16px;
+}
+
+.feature-package {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+}
+.card {
+	flex: 1 1 30%;
+	min-width: 10%;
+	max-height: 250px;
+	margin: 30px 40px;
+	display: block;
+}
+.card .container h5, h6 {
+	text-align: center;
+	color: grey;	
+}
+.card .card-image {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 120px;
+}
+.card .card-image img {
+	max-height: 80px;
+}
+
+.card .container {
+	max-height: 100px;
+}
