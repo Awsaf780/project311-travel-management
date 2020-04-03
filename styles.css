@@ -1,11 +1,21 @@
+body {
+	margin: 0;
+	padding: 0;
+}
 .subtitle {
 	text-align: center;
-	color: grey;
+	color: black;
 }
-
+hr.divider {
+	margin: 0 10%;
+}
+.wrapper {
+	margin: 5vh 10vh;
+	height: 100vh;
+}
 .card {
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-	max-width: 200px;
+	max-width: 220px;
 }
 
 .card:hover {
@@ -33,16 +43,76 @@
 	text-align: center;
 	color: grey;	
 }
+.card .container h5 {
+	color: black;	
+}
+
 .card .card-image {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	min-height: 120px;
+	min-height: 150px;
 }
 .card .card-image img {
 	max-height: 80px;
 }
+.card .card-image img:hover {
+	max-height: 90px;
+	transition: 0.3s;
+}
 
 .card .container {
 	max-height: 100px;
+}
+
+
+.landing {
+	min-height: 90vh;
+	background: #39ac73;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+.landing .landing-image {
+	min-width: 40%;
+	max-height: 60vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.landing .landing-image > img {
+	width: 80vh;
+	opacity: 0.9;
+}
+.landing .landing-image > img:hover {
+	opacity: 1;
+}
+
+.landing .landing-start {
+	margin-top: 8vh;
+	min-width: 40%;
+	min-height: 40vh;
+	display: flex;
+	flex-flow: column;
+	justify-content: space-around;
+	align-items: center;
+}
+.landing .landing-start .login-form {
+	min-height: 15vh;
+	display: flex;
+	flex-flow: column;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 0.8em;
+	color: white;
+}
+.landing .landing-start .login-title {
+	color: white;
+}
+.login-form .login-box, .login-button {
+	border-radius: 8px;
+}
+.head {
+	min-height: 10vh;
+	background: white;
 }
