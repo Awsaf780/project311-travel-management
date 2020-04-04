@@ -1,3 +1,6 @@
+
+/*####### BASIC ###############*/
+
 body {
 	margin: 0;
 	padding: 0;
@@ -8,8 +11,95 @@ body {
 }
 .wrapper {
 	margin: 5vh 10vh;
-	height: 100vh;
 }
+
+/*########### HEADER BEFORE ##############*/
+
+.main-header .container {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	background: #f2f2f2;
+}
+
+.main-nav ul {
+	margin: 1em 0 .5em;
+	text-align: center;
+}
+.main-nav li {
+	display: inline;
+}
+.main-nav a {
+	display: inline-block;
+	padding: .5em 1.5em;
+	text-decoration: none;
+	color: #39ac73;
+}
+.main-nav a:hover {
+	text-decoration: underline;
+}
+.mh-logo a {
+	text-decoration: none;
+	color: #39ac73;
+	opacity: 0.8;
+}
+.mh-logo a:hover {
+	text-decoration: none;
+	opacity: 1;
+}
+
+/*######### INDEX LANDING #############*/
+
+.landing {
+	min-height: 90vh;
+	background: #39ac73;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+.landing .landing-image {
+	min-width: 40%;
+	max-height: 60vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.landing .landing-image > img {
+	width: 80vh;
+	opacity: 0.9;
+}
+.landing .landing-image > img:hover {
+	opacity: 1;
+}
+
+.landing .landing-start {
+	margin-top: 8vh;
+	min-width: 40%;
+	min-height: 40vh;
+	display: flex;
+	flex-flow: column;
+	justify-content: space-around;
+	align-items: center;
+}
+.landing .landing-start .login-form {
+	min-height: 15vh;
+	display: flex;
+	flex-flow: column;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 0.8em;
+	color: white;
+}
+.landing .landing-start .login-title {
+	color: white;
+}
+.login-form .login-box, .login-button {
+	border-radius: 8px;
+}
+
+/*####### INDEX PACKAGE ################*/
+
 .card {
 	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 	max-width: 220px;
@@ -62,90 +152,55 @@ body {
 	max-height: 100px;
 }
 
-.landing {
-	min-height: 90vh;
-	background: #39ac73;
+/*########## INDEX HOTEL ##############*/
+
+.feature-hotel {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+}
+.feature-hotel .cardlet {
+	max-height: 50px;
+	max-width: 270px;
+	box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
+	flex: 1 1 20%;
+	margin: 30px 40px;
 }
-.landing .landing-image {
-	min-width: 40%;
-	max-height: 60vh;
+.cardlet .card-img {
+	min-width: 50px;
+	max-width: 50px;
+	min-height: 50px;
+	max-height: 50px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
-.landing .landing-image > img {
-	width: 80vh;
-	opacity: 0.9;
-}
-.landing .landing-image > img:hover {
-	opacity: 1;
-}
-
-.landing .landing-start {
-	margin-top: 8vh;
-	min-width: 40%;
-	min-height: 40vh;
-	display: flex;
-	flex-flow: column;
-	justify-content: space-around;
-	align-items: center;
-}
-.landing .landing-start .login-form {
-	min-height: 15vh;
-	display: flex;
-	flex-flow: column;
-	justify-content: space-between;
-	align-items: center;
-	font-size: 0.8em;
-	color: white;
-}
-.landing .landing-start .login-title {
-	color: white;
-}
-.login-form .login-box, .login-button {
-	border-radius: 8px;
-}
-.head {
-	min-height: 10vh;
-	max-height: 10vh;
-	background: white;
-}
-
-/*test code*/
-
-.main-header .container {
-	display: flex;
-	align-items: center;
-	justify-content: space-around;
-	flex-wrap: wrap;
-	background: #f2f2f2;
-}
-
-.main-nav ul {
-	margin: 1em 0 .5em;
-	text-align: center;
-}
-.main-nav li {
-	display: inline;
-}
-.main-nav a {
-	display: inline-block;
-	padding: .5em 1.5em;
-	text-decoration: none;
-	color: #39ac73;
-}
-.main-nav a:hover {
-	text-decoration: underline;
-}
-.mh-logo a {
-	text-decoration: none;
-	color: #39ac73;
+.card-img img {
+	max-height: 30px;
 	opacity: 0.8;
 }
-.mh-logo a:hover {
-	text-decoration: none;
-	opacity: 1;
+.cardlet .card-text {
+	min-width: 120px;
+	max-width: 120px;
+	min-height: 50px;
+	max-height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.cardlet .card-star {
+	min-width: 50px;
+	max-width: 50px;
+	min-height: 50px;
+	max-height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.card-star img {
+	max-height: 10px;
 }

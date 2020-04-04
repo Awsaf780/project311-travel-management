@@ -19,12 +19,17 @@
 			$_SESSION['login_user'] = $myusername;
 			header("location: welcome.php");
 		}else {
-			$error = "Your Login Name or Password is invalid";
+			$error = "Invalid username or password";
 		}
 	}
 
 	$package_query = "SELECT * FROM package ORDER BY cost LIMIT 6";
 	$package_result = mysqli_query($conn, $package_query);
+
+	$hotel_query = "SELECT DISTINCT * FROM hotel LIMIT 6";
+	$hotel_result = mysqli_query($conn, $hotel_query);
+
+
 
  ?>
 
@@ -55,8 +60,7 @@
  					     Password<br><input required class="login-box" type="password" name="pass" placeholder="Enter Password">
  				</div>
  				<div>
- 					<input class="login-button" type="submit" name="" value="   SUBMIT   ">
-
+ 					<button class="login-button" type="submit">Sign In</button>
  				</div>
  			</form>
  			<?php echo '<p style="color:white">'.$error.'</p>'; ?>
@@ -76,12 +80,12 @@
 		<div class="feature-package">
 			<?php 
 			if (mysqli_num_rows($package_result) > 0 ) {
-				while ($row = mysqli_fetch_assoc($package_result)) {
+				while ($row1 = mysqli_fetch_assoc($package_result)) {
 					echo '<div class="card">
-							<div class="card-image"><img src="images/package/'.$row['imagename'].'.svg"></div>
+							<div class="card-image"><img src="images/package/'.$row1['imagename'].'.svg"></div>
 							<div class="container">
-								<h5><b>'.$row['name'].'</b></h5>
-								<h6>'.$row['duration'].' Days - BDT '.$row['cost'].'</h6>
+								<h5><b>'.$row1['name'].'</b></h5>
+								<h6>'.$row1['duration'].' Days - BDT '.$row1['cost'].'</h6>
 							</div>
 						  </div>';
 				}
@@ -94,11 +98,33 @@
 	<div class="wrapper">
 
 		<div>
-			<h4 class="subtitle">Popular Bus Routes</h4><hr class="divider">
+			<h4 class="subtitle">Popular Hotels</h4><hr class="divider">
 		</div>
 
 		<div>
-			
+			<div class="feature-hotel">
+				<?php 
+				if (mysqli_num_rows($hotel_result) > 0) {
+					while ($row2 = mysqli_fetch_assoc($hotel_result)) {
+						echo '<div class="cardlet">
+
+								<div class="card-img">
+									<img src="images/hotel.svg">
+								</div>
+
+								<div class="card-text">
+									<h5>'.$row2['name'].'</h5>
+								</div>
+								<div class="card-star">';
+									for ($i=0; $i < $row2['stars']; $i++) { 
+										echo ' <img src="images/star.svg"> ';
+									}
+						echo '</div></div>';
+					}
+				}
+
+				 ?>
+			</div>
 		</div>
 	</div>
 
