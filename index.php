@@ -1,4 +1,4 @@
-<?php 
+<?php
 	include 'config.php';
 
 	session_start();
@@ -7,7 +7,7 @@
 	if($_SERVER["REQUEST_METHOD"] == "POST") {
 
 		$myusername = mysqli_real_escape_string($conn,$_POST['username']);
-		$mypassword = mysqli_real_escape_string($conn,$_POST['pass']); 
+		$mypassword = mysqli_real_escape_string($conn,$_POST['pass']);
 
 		$sql = "SELECT id FROM login WHERE username = '$myusername' and pass = '$mypassword'";
 		$result = mysqli_query($conn,$sql);
@@ -78,7 +78,7 @@
 		</div>
 
 		<div class="feature-package">
-			<?php 
+			<?php
 			if (mysqli_num_rows($package_result) > 0 ) {
 				while ($row1 = mysqli_fetch_assoc($package_result)) {
 					echo '<div class="card">
@@ -91,7 +91,7 @@
 				}
 			}
 
-		 ?>	
+		 ?>
 		</div>
 	</div>
 
@@ -103,7 +103,7 @@
 
 		<div>
 			<div class="feature-hotel">
-				<?php 
+				<?php
 				if (mysqli_num_rows($hotel_result) > 0) {
 					while ($row2 = mysqli_fetch_assoc($hotel_result)) {
 						echo '<div class="cardlet">
@@ -116,7 +116,7 @@
 									<h5>'.$row2['name'].'</h5>
 								</div>
 								<div class="card-star">';
-									for ($i=0; $i < $row2['stars']; $i++) { 
+									for ($i=0; $i < $row2['stars']; $i++) {
 										echo ' <img src="images/star.svg"> ';
 									}
 						echo '</div></div>';
@@ -127,8 +127,7 @@
 			</div>
 		</div>
 	</div>
-
-
+	
 
 
  </body>
