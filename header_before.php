@@ -1,3 +1,6 @@
+<head>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
  <header class="main-header">
 	<div class="container">
 		<h1 class="mh-logo">

@@ -204,3 +204,38 @@ body {
 .card-star img {
 	max-height: 10px;
 }
+
+/*########## SIGNUP REGISTER ###########*/
+
+.register {
+	background: #39ac73;
+	height: 87vh;
+}
+.feature-register {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	padding-top: 20vh;
+}
+.feature-register .register-img {
+	min-height: 50vh;
+	min-width: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.register-img img {
+	max-height: 50vh;
+}
+.feature-register .register-text {
+	min-height: 50vh;
+	min-width: 40%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-direction: column;
+	color: white;
+}
+.register-text form input {
+	border-radius: 8px;
+}

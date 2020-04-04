@@ -15,7 +15,7 @@
     }
 
     if (empty($_POST['username'])) {
-      $errors['username'] =  'Test Number is required';
+      $errors['username'] =  'Username is required';
     }
     else{
       
@@ -23,21 +23,21 @@
     }
 
     if (empty($_POST['pass'])) {
-      $errors['pass'] = 'Subject is required';
+      $errors['pass'] = 'Password is required';
     }
     else{
       $pass = $_POST['pass'];
     }
 
     if (empty($_POST['card_no'])) {
-      $errors['card_no'] = 'Class is required';
+      $errors['card_no'] = '16 Digit Card Number is required';
     }
     else{
       $card_no = $_POST['card_no'];
     }
 
     if (empty($_POST['email'])) {
-      $errors['email'] = 'Score is required';
+      $errors['email'] = 'Email is required';
     }
     else{
       $email = $_POST['email'];
@@ -63,7 +63,7 @@
         if ($result2 && $result1) {
           echo "<script>
           alert('Inserted Successfully');
-          window.location.href = 'login.php';
+          window.location.href = 'index.php';
           </script>";
           exit;
         }
@@ -78,40 +78,62 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <title>Sign Up</title>
 </head>
+
 <body>
-<form class="white" action="signup.php" method="POST">
-<table>
-  <tr>
-    <td><label for="usr">Full Name</label></td>
-    <td><input type="text" id="usr" name="fullname"></td>
-  </tr>
-  <tr>
-    <td><label for="subj">Username</label></td>
-    <td><input type="text" name="username"></td>
-  </tr>
-  <tr>
-    <td><label for="clas">Password</label></td>
-    <td><input type="password" name="pass"></td>
-  </tr>
-  <tr>
-    <td><label for="tst">Email</label></td>
-    <td><input type="Email" name="email"></td>
-  </tr>
-  <tr>
-    <td><label for="scr">Credit Card Number</label></td>
-    <td><input type="number" id="scr" name="card_no"></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td style="text-align: right;"><input type="submit" id="submit" name="submit" value="submit" href="#"></td>
-  </tr>
-</table>
-    
 
+  <div>
+    <?php include 'header_before.php'; ?>
+  </div>
 
+  <div class="register">
+    <div class="feature-register">
 
-    </form>
+      <div class="register-text">
+        <div><h2>Register Form</h2></div>
+        <div>
+          <form class="white" action="signup.php" method="POST">
+
+            <table>
+              <tr>
+                <td><label for="usr">Full Name</label></td>
+                <td><input type="text" id="usr" name="fullname"></td>
+              </tr>
+              <tr>
+                <td><label for="subj">Username</label></td>
+                <td><input type="text" name="username"></td>
+              </tr>
+              <tr>
+                <td><label for="clas">Password</label></td>
+                <td><input type="password" name="pass"></td>
+              </tr>
+              <tr>
+                <td><label for="tst">Email</label></td>
+                <td><input type="Email" name="email"></td>
+              </tr>
+              <tr>
+                <td><label for="scr">Credit Card No</label></td>
+                <td><input type="number" id="scr" name="card_no"></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td style="text-align: right;"><input type="submit" id="submit" name="submit" value="REGISTER" href="#"></td>
+              </tr>
+            </table>
+
+          </form>
+
+        </div>  
+
+      </div>
+      
+      <div class="register-img"><img src="images/register.svg"></div>
+
+      
+
+    </div>    
+  </div>
+
 </body>
 </html>
