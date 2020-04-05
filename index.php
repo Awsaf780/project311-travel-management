@@ -54,10 +54,12 @@
 
  			<form class="login-form" action="" method="post">
  				<div>
- 					     Username<br><input required autofocus="on" class="login-box" type="text" name="username" placeholder="Enter Username">
+					<!-- <label>Username</label> -->
+ 					<input required autofocus="on" class="login-box" type="text" name="username" placeholder="Enter Username">
  				</div>
  				<div>
- 					     Password<br><input required class="login-box" type="password" name="pass" placeholder="Enter Password">
+					<!-- <label>Password</label> -->
+ 					<input required class="login-box" type="password" name="pass" placeholder="Enter Password">
  				</div>
  				<div>
  					<button class="login-button" type="submit">Sign In</button>
@@ -65,7 +67,7 @@
  			</form>
  			<?php echo '<p style="color:white">'.$error.'</p>'; ?>
  			<div style="color: white">
- 				<h4>or <a style="color: white; text-decoration: none" href="signup.php">Sign Up</a></h4>
+ 				<h5>Don't have an account? <a style="color: white; text-decoration: none" href="signup.php"><i>Sign Up</i></a></h5>
  			</div>
 
  		</div>

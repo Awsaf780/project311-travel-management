@@ -90,45 +90,49 @@
   <div class="register">
     <div class="feature-register">
 
-      <div class="register-text">
-        <div><h2>Register Form</h2></div>
-        <div>
-          <form class="white" action="signup.php" method="POST">
+      <div class="register-img"><img src="images/register.svg"></div>
 
-            <table>
-              <tr>
-                <td><label for="usr">Full Name</label></td>
-                <td><input type="text" id="usr" name="fullname"></td>
-              </tr>
-              <tr>
-                <td><label for="subj">Username</label></td>
-                <td><input type="text" name="username"></td>
-              </tr>
-              <tr>
-                <td><label for="clas">Password</label></td>
-                <td><input type="password" name="pass"></td>
-              </tr>
-              <tr>
-                <td><label for="tst">Email</label></td>
-                <td><input type="Email" name="email"></td>
-              </tr>
-              <tr>
-                <td><label for="scr">Credit Card No</label></td>
-                <td><input type="number" id="scr" name="card_no"></td>
-              </tr>
-              <tr>
-                <td></td>
-                <td style="text-align: right;"><input type="submit" id="submit" name="submit" value="REGISTER" href="#"></td>
-              </tr>
-            </table>
+      <div class="register-text">
+        <div><h1>Sign Up</h1></div>
+        <div>
+          <form style="width: 45vh" action="signup.php" method="POST">
+
+            <div class="register-form">
+              <label for="usr">Full Name</label>
+              <input type="text" id="usr" name="fullname" required placeholder="John Doe">
+            </div>
+            <div class="register-form">
+              <label for="subj">Username</label>
+              <input type="text" name="username" required placeholder="John360">
+            </div>
+            <div class="register-form">
+              <label for="clas">Password</label>
+              <input type="password" name="pass" required placeholder="********">
+            </div>
+            <div class="register-form">
+              <label for="tst">Email</label>
+              <input type="Email" name="email" required placeholder="example@email.com">
+            </div>
+            <div class="register-form">
+              <label for="scr">Credit Card No</label>
+              <input type="number" id="scr" name="card_no" required placeholder="1111222233334444">
+            </div>
+            <div class="register-form">
+              <label for=""></label>
+              <input type="submit" id="submit" name="submit" value="REGISTER" href="#">
+            </div>
 
           </form>
-
         </div>
+
+        <div style="color: white">
+   				<h5>Already have an account? <a style="color: white; text-decoration: none" href="index.php"><i>Sign In</i></a></h5>
+   			</div>
 
       </div>
 
-      <div class="register-img"><img src="images/register.svg"></div>
+
+
 
 
 

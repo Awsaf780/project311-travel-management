@@ -18,7 +18,7 @@
 		</div>
 
 		<div class="foot3">
-			<div class="link"><a>Copyright 2020 CSE 311 Project</a></div>
+			<div class="link"><a>Copyright 2020 - CSE 311 Project</a></div>
 		</div>
 	</div>
   </body>

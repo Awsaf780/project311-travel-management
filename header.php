@@ -8,7 +8,7 @@
  <header class="profile-header">
 	<div class="container">
 		<h1 class="mh-logo-profile">
-			<a href="welcome.php">Travel</a>
+			<a href="welcome.php">Homepage</a>
 		</h1>
 		<nav class="profile-nav">
 			<ul class="profile-nav-list">

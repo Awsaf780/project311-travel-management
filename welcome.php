@@ -7,7 +7,9 @@
     $search_package = mysqli_real_escape_string($conn,$_POST['search_text']);
 
     // $package_query = 'SELECT * FROM package WHERE name like "%'.$search_package.'%"';
-    $package_query = 'SELECT * FROM package WHERE name LIKE "%'.$search_package.'%" OR (attractions LIKE "%'. $search_package .'%") OR (destination LIKE "%'. $search_package .'%")';
+    $package_query = 'SELECT * FROM package WHERE name LIKE "%'.$search_package.
+    '%" OR (attractions LIKE "%'. $search_package .
+    '%") OR (destination LIKE "%'. $search_package .'%")';
     $package_result = mysqli_query($conn, $package_query);
   }
   else {
@@ -29,11 +31,11 @@
        <?php include 'header.php'; ?>
      </div>
 
-     <div class="wrapper">
+     <div class="wrapper" style="min-height: 90vh">
 
        <div>
          <h4 class="subtitle">Tour Packages [ <?php
-                   if ($search_package == "*") {
+                   if ($search_package == "*" || $search_package == "") {
                      echo "All ]";
                    }else {
                      echo $search_package . ' ]';
@@ -43,9 +45,12 @@
 
        <form class="topnav" action="" method="post">
 
-         <div class="w3-padding w3-xlarge w3-text-orange">
+         <div class="search-box">
            <input type="text" placeholder="Search.." name="search_text">
-           <button type="submit" name="submit">SEARCH</button>
+           <!-- <button type="submit" name="submit"></button> -->
+           <button type="submit" style="border: 0; background: transparent; cursor: pointer">
+             <img src="images/search.svg" width="20px" height="20px" alt="submit" />
+           </button>
          </div>
 
        </form>

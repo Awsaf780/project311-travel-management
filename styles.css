@@ -132,7 +132,11 @@ body {
 	color: white;
 }
 .login-form .login-box, .login-button {
-	border-radius: 8px;
+	border-radius: 5px;
+	padding: 6px;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 12px;
 }
 
 /*####### INDEX PACKAGE ################*/
@@ -274,9 +278,17 @@ body {
 	color: white;
 }
 .register-text form input {
-	border-radius: 8px;
+	border-radius: 5px;
+	padding: 6px;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 12px;
 }
-
+.register-form {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
 /* ############ FOOTER ############### */
 
 .footer {
@@ -335,18 +347,16 @@ body {
 }
 
 /* ######## WELCOME SEARCH ########### */
-.topnav {
+
+.search-box {
 	display: flex;
-	justify-content: space-around;
+	justify-content: center;
 	align-items: center;
-	flex-direction: column-reverse;
 }
 .topnav input[type=text] {
   padding: 6px;
   margin-top: 8px;
   margin-right: 16px;
   font-size: 17px;
-}
-.topnav .search {
-	max-width: 10px;
+	border: none;
 }
