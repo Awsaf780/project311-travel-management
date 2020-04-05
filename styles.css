@@ -239,3 +239,60 @@ body {
 .register-text form input {
 	border-radius: 8px;
 }
+
+/* ############ FOOTER ############### */
+
+.footer {
+  min-width: 100%;
+  min-height: 40vh;
+  background: #262626;
+}
+.link a {
+	color: #39ac73;
+	text-align: center;
+	text-decoration: none;
+}
+.link a:hover {
+	color: grey;
+}
+#separator {
+	min-height: 30vh;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+}
+.foot1 {
+	min-width: 30%;
+	max-width: 30%;
+	max-height: 20vh;
+	min-height: 20vh;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-items: center;
+}
+.foot2 {
+	min-width: 30%;
+	min-height: 20vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+}
+.foot3 {
+	min-height: 10vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.foot1 .link {
+	max-height: 50px;
+	max-height: 50px;
+	background: #39ac73;
+	border-radius: 10px;
+}
+.foot1 .link a img {
+	max-height: 50px;
+	max-width: 50px;
+}
