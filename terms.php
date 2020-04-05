@@ -9,7 +9,7 @@
      <title>Terms And Conditions</title>
    </head>
    <body>
-     <div class="container" style="text-align: center">
+     <div class="container-extra" style="text-align: center">
        <h2>Welcome to Travel Management</h2>
 	<p>These terms and conditions outline the rules and regulations for the use of Travel Management's Website.</p> <br />
 	<span style="text-transform: capitalize;"> Travel Management</span> is located at:<br />
@@ -174,6 +174,10 @@
 	<p>This Terms and conditions page was created at <a style="color:inherit;text-decoration:none;cursor:text;"
 		href="https://termsandconditionstemplate.com">termsandconditionstemplate.com</a> generator. If you have
 	any queries regarding any of our terms, please contact us.</p>
+     </div>
+
+     <div>
+       <?php include 'footer.php'; ?>
      </div>
    </body>
  </html>

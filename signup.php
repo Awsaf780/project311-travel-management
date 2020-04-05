@@ -1,4 +1,4 @@
-<?php 
+<?php
   include 'config.php';
 
   $fullname = $username = $pass = $card_no = $email = '';
@@ -10,7 +10,7 @@
       $errors['fullname'] =  'Name is required';
     }
     else{
-      
+
       $fullname = $_POST['fullname'];
     }
 
@@ -18,7 +18,7 @@
       $errors['username'] =  'Username is required';
     }
     else{
-      
+
       $username = $_POST['username'];
     }
 
@@ -70,7 +70,7 @@
         else {
           echo "Username Exists";
         }
-            
+
     }
     }
  ?>
@@ -124,16 +124,18 @@
 
           </form>
 
-        </div>  
+        </div>
 
       </div>
-      
+
       <div class="register-img"><img src="images/register.svg"></div>
 
-      
 
-    </div>    
+
+    </div>
   </div>
-
+  <div>
+		<?php include 'footer.php'; ?>
+	</div>
 </body>
 </html>

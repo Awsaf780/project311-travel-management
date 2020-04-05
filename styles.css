@@ -49,6 +49,42 @@ body {
 	opacity: 1;
 }
 
+/*########### HEADER PROFILE ##############*/
+
+.profile-header .container {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	background: #39ac73;
+}
+
+.profile-nav ul {
+	margin: 1em 0 .5em;
+	text-align: center;
+}
+.profile-nav li {
+	display: inline;
+}
+.profile-nav a {
+	display: inline-block;
+	padding: .5em 1.5em;
+	text-decoration: none;
+	color: #f2f2f2;
+}
+.profile-nav a:hover {
+	text-decoration: underline;
+}
+.mh-logo-profile a {
+	text-decoration: none;
+	color: #f2f2f2;
+	opacity: 1;
+}
+.mh-logo-profile a:hover {
+	text-decoration: none;
+	opacity: 0.8;
+}
+
 /*######### INDEX LANDING #############*/
 
 .landing {

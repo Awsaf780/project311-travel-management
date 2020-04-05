@@ -6,7 +6,7 @@
     <title>Privacy Policy</title>
   </head>
   <body>
-    <div class="container" style="text-align: center">
+    <div class="container-extra" style="text-align: center">
       <h1>Welcome to our Privacy Policy</h1>
 <h3>Your privacy is critically important to us.</h3>
 Travel Management is located at:<br/>
@@ -58,6 +58,10 @@ Travel Management is located at:<br/>
 <h2>Credit & Contact Information</h2>
         <p>This privacy policy was created at <a style="color:inherit;text-decoration:none;" href="https://termsandconditionstemplate.com/privacy-policy-generator/" title="Privacy policy template generator" target="_blank">termsandconditionstemplate.com</a>. If you have any questions about this Privacy Policy, please contact us via <a href="mailto:aazrael780@gmail.com">email</a> or <a href="tel:8801818123221">phone</a>.</p>
 
+    </div>
+
+    <div>
+      <?php include 'footer.php'; ?>
     </div>
   </body>
 </html>
