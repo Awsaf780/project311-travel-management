@@ -1,7 +1,20 @@
 <?php
   include 'config.php';
-  $package_query = "SELECT * FROM package";
-  $package_result = mysqli_query($conn, $package_query);
+
+  $search_package = "*";
+
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $search_package = mysqli_real_escape_string($conn,$_POST['search_text']);
+
+    // $package_query = 'SELECT * FROM package WHERE name like "%'.$search_package.'%"';
+    $package_query = 'SELECT * FROM package WHERE name LIKE "%'.$search_package.'%" OR (attractions LIKE "%'. $search_package .'%") OR (destination LIKE "%'. $search_package .'%")';
+    $package_result = mysqli_query($conn, $package_query);
+  }
+  else {
+    $package_query = 'SELECT * FROM package';
+    $package_result = mysqli_query($conn, $package_query);
+  }
+
 
  ?>
 <html>
@@ -19,15 +32,30 @@
      <div class="wrapper">
 
        <div>
-         <h4 class="subtitle">All Tour Packages</h4><hr class="divider">
+         <h4 class="subtitle">Tour Packages [ <?php
+                   if ($search_package == "*") {
+                     echo "All ]";
+                   }else {
+                     echo $search_package . ' ]';
+                   }
+                 ?></h4><hr class="divider">
        </div>
+
+       <form class="topnav" action="" method="post">
+
+         <div class="w3-padding w3-xlarge w3-text-orange">
+           <input type="text" placeholder="Search.." name="search_text">
+           <button type="submit" name="submit">SEARCH</button>
+         </div>
+
+       </form>
 
        <div class="feature-package">
          <?php
          if (mysqli_num_rows($package_result) > 0 ) {
            while ($row1 = mysqli_fetch_assoc($package_result)) {
              echo '<div class="card">
-             <a style="text-decoration:none" href="">
+                  <a href="" style="text-decoration: none">
                  <div class="card-image"><img src="images/package/'.$row1['imagename'].'.svg"></div>
                  <div class="container">
                    <h5><b>'.$row1['name'].'</b></h5>
@@ -43,6 +71,9 @@
                  </div></a>
                  </div>';
            }
+         }
+         else {
+           echo '<h4>No Results Found</h4>';
          }
 
         ?>

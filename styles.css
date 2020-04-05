@@ -104,6 +104,7 @@ body {
 .landing .landing-image > img {
 	width: 80vh;
 	opacity: 0.9;
+	margin-left: 50px;
 }
 .landing .landing-image > img:hover {
 	opacity: 1;
@@ -331,4 +332,21 @@ body {
 .foot1 .link a img {
 	max-height: 50px;
 	max-width: 50px;
+}
+
+/* ######## WELCOME SEARCH ########### */
+.topnav {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	flex-direction: column-reverse;
+}
+.topnav input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+}
+.topnav .search {
+	max-width: 10px;
 }
