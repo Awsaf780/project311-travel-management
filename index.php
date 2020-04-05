@@ -85,7 +85,15 @@
 							<div class="card-image"><img src="images/package/'.$row1['imagename'].'.svg"></div>
 							<div class="container">
 								<h5><b>'.$row1['name'].'</b></h5>
-								<h6>'.$row1['duration'].' Days - BDT '.$row1['cost'].'</h6>
+								<h6>'.$row1['duration'];
+
+								if ($row1['duration'] > 1) {
+									echo " Days";
+								}else {
+									echo " Day";
+								}
+
+								echo ' - BDT '.$row1['cost'].'</h6>
 							</div>
 						  </div>';
 				}
