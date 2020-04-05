@@ -12,10 +12,10 @@
 					<a href="#">About us</a>
 				</li>
 				<li>
-					<a href="#">Terms</a>
+					<a href="terms.php">Terms</a>
 				</li>
 				<li>
-					<a href="#">Contact</a>
+					<a href="privacy.php">Privacy</a>
 				</li>
 			</ul>
 		</nav>
