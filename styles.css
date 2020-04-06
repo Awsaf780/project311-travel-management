@@ -1,3 +1,17 @@
+:root {
+	--main-color-theme : #39ac73;
+
+	/*Copy and Paste one of the color codes to change theme:
+	
+	#2eb8b8 
+	#4da6ff
+	#ff8c1a
+	#e60000
+	#b800e6
+	#39ac73 - Default Theme
+	#9999ff
+	*/
+}
 
 /*####### BASIC ###############*/
 
@@ -34,14 +48,14 @@ body {
 	display: inline-block;
 	padding: .5em 1.5em;
 	text-decoration: none;
-	color: #39ac73;
+	color: var(--main-color-theme);
 }
 .main-nav a:hover {
 	text-decoration: underline;
 }
 .mh-logo a {
 	text-decoration: none;
-	color: #39ac73;
+	color: var(--main-color-theme);
 	opacity: 0.8;
 }
 .mh-logo a:hover {
@@ -56,7 +70,7 @@ body {
 	align-items: center;
 	justify-content: space-around;
 	flex-wrap: wrap;
-	background: #39ac73;
+	background: var(--main-color-theme);
 }
 
 .profile-nav ul {
@@ -89,7 +103,7 @@ body {
 
 .landing {
 	min-height: 90vh;
-	background: #39ac73;
+	background: var(--main-color-theme);
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
@@ -249,7 +263,7 @@ body {
 /*########## SIGNUP REGISTER ###########*/
 
 .register {
-	background: #39ac73;
+	background: var(--main-color-theme);
 	height: 87vh;
 }
 .feature-register {
@@ -297,7 +311,7 @@ body {
   background: #262626;
 }
 .link a {
-	color: #39ac73;
+	color: var(--main-color-theme);
 	text-align: center;
 	text-decoration: none;
 }
@@ -338,7 +352,7 @@ body {
 .foot1 .link {
 	max-height: 50px;
 	max-height: 50px;
-	background: #39ac73;
+	background: var(--main-color-theme);
 	border-radius: 10px;
 }
 .foot1 .link a img {
