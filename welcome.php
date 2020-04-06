@@ -60,7 +60,7 @@
          if (mysqli_num_rows($package_result) > 0 ) {
            while ($row1 = mysqli_fetch_assoc($package_result)) {
              echo '<div class="card">
-                  <a href="" style="text-decoration: none">
+                  <a href="view_package.php?id='.$row1['id'].'" style="text-decoration: none">
                  <div class="card-image"><img src="images/package/'.$row1['imagename'].'.svg"></div>
                  <div class="container">
                    <h5><b>'.$row1['name'].'</b></h5>
