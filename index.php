@@ -23,7 +23,7 @@
 		}
 	}
 
-	$package_query = "SELECT * FROM package GROUP BY destination LIMIT 6";
+	$package_query = "SELECT * FROM package GROUP BY destination LIMIT 4";
 	$package_result = mysqli_query($conn, $package_query);
 
 	$hotel_query = "SELECT DISTINCT * FROM hotel LIMIT 6";

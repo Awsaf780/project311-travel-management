@@ -9,7 +9,7 @@
         $selected_package_result = mysqli_query($conn, $selected_package);
 
         if (mysqli_num_rows($selected_package_result)==1) {
-            $row_selected = mysqli_fetch_assoc($selected_package_result);
+            $my_package = mysqli_fetch_assoc($selected_package_result);
         }
         else {
         	header("Location: 404.php");
@@ -22,7 +22,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title><?php echo $row_selected['name']; ?></title>
+	<title><?php echo $my_package['name']; ?></title>
 </head>
 <body>
 	<div>
@@ -30,7 +30,7 @@
 	</div>
 
 	<div class="wrapper" style="min-height: 90vh">
-		<h1><?php echo $row_selected['name']; ?></h1>
+		<h1><?php echo $my_package['name']; ?></h1>
 		<p>Insert Necessary Details here</p>
 		<button><a href="">Book Now!</a></button>	
 	</div>
