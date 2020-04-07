@@ -1,5 +1,6 @@
 <?php
    include('session.php');
+   include 'profile_picture.php';
 ?>
 
 <head>
@@ -13,11 +14,11 @@
 		<nav class="profile-nav">
 			<ul class="profile-nav-list">
 				<li>
-					<a href="#">Profile</a>
+					<a href="profile.php">Profile</a>
 				</li>
-				<li>
-					<a href="#">Settings</a>
-				</li>
+				<!-- <li>
+					<a href="settings.php">Settings</a>
+				</li> -->
 				<li>
 					<a href="logout.php">Logout</a>
 				</li>
