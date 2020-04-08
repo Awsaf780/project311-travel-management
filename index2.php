@@ -7,17 +7,53 @@
 	}
 
  ?>
+ <!DOCTYPE html>
+<html>
+<style>
+body {
+ font-family: Arial;
+}
 
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>insert </title>
+input[type=text], select {
+ width: 100%;
+ padding: 12px 20px;
+ margin: 8px 0;
+ display: block;
+ border: 1px solid #ccc;
+ border-radius: 4px;
+ box-sizing: border-box;
+}
+
+input[type=submit] {
+ width: 100%;
+ background-color: #4CAF50;
+ color: white;
+ padding: 14px 20px;
+ margin: 8px 0;
+ border: none;
+ border-radius: 4px;
+ cursor: pointer;
+}
+
+input[type=submit]:hover {
+ background-color: #45a049;
+}
+
+div.container {
+ border-radius: 5px;
+ background-color: #f2f2f2;
+ padding: 20px;
+}
+</style>
+
   </head>
   <body>
     <form  action="insert.php" method="post">
 
+
+ <label for="hotel_id"><b>hotel number?</b></label>
 		<select input type="text"  name="hotel_id" required>
+
 			<option value="HTL001" >HTL001</option>
 			<option value="HTL002" >HTL002</option>
 			<option value="HTL003" >HTL003</option>
@@ -27,6 +63,7 @@
 			<option value="HTL007" >HTL007</option>
 		</select>
 		<br>
+    <label for="package_id"><b>package</b></label>
 		<select input type="text"  name="package_id" required>
 			<option value="PKG001" >PKG001</option>
 			<option value="PKG002" >PKG002</option>
@@ -40,6 +77,7 @@
 
 		</select>
 		<br>
+    <label for="transport_id"><b>which transport you prefer?</b></label>
 		<select input type="text"  name="transport_id" required>
 			<option value="AIR001" >AIR001</option>
 			<option value="AIR002" >AIR002</option>
@@ -59,13 +97,26 @@
 
 
 		</select>
-		<br>
-		<input type="text" name="User_ID" placeholder="User_ID" required><br>
-		<input type="text" name="transaction_id" placeholder="transaction_id" required><br>
-		<input type="text" name="transport_type" placeholder="transport_type" ><br>
+    <br>
+    <label for="transaction_id"><b>transaction</b></label>
+    <select input type="text"  name="transaction_id" required>
+      <option value="f9b42d6" >f9b42d6</option>
+      <option value="jh4y28d" >jh4y28d</option>
+      <option value="wr43hgt" >wr43hgt</option>
+      	</select>
+
+
+      <label for="transport_type"><b>choose transport type</b></label>
+      <select input type="text"  name="transport_type" required>
+        <option value="Air" >Air</option>
+        <option value="Water" >Water</option>
+        <option value="Bus" >Bus</option>
+        	</select>
+
+
 		<input type="text" name="num_person" placeholder="total person" required><br>
 		<input type="date" name="travel_date" placeholder="travel_date" required><br>
-		<input type="submit" name="insert" value="Insert">
+		<input type="submit" name="insert" value="submit">
     </form>
     <div>
       <?php include 'footer.php'; ?>
