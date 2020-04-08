@@ -1,6 +1,12 @@
 <?php
-	include_once 'insert.php';
-?>
+
+	$conn = mysqli_connect("localhost", "root", "", 'project_311');
+
+	if(!$conn) {
+		die("Connection Error " . mysqli_connect_error());
+	}
+
+ ?>
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
