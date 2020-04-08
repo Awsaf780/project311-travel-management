@@ -77,7 +77,7 @@ div.container {
 
 		</select>
 		<br>
-    <label for="transport_id"><b>which transport you prefer?</b></label>
+    <label for="transport_id"><b>which transport do you prefer?</b></label>
 		<select input type="text"  name="transport_id" required>
 			<option value="AIR001" >AIR001</option>
 			<option value="AIR002" >AIR002</option>
