@@ -39,7 +39,7 @@ if(isset($_POST['but_upload'])){
 <head>
   <title>Settings</title>
 </head>
-<div class="wrapper" style="margin: 5vh 25vh;">
+<div class="wrapper" style="margin: 5vh 25vh;min-height: 90vh">
 
   <div class="feature-display">
 
@@ -62,11 +62,18 @@ if(isset($_POST['but_upload'])){
           <div class="register-form"><label>Email</label><input type="email" name="email" value="Get From Database"></div>
           <div class="register-form"><label>Phone Number</label><input type="phone" name="phone" value="Get From Database"></div>
           <div class="register-form"><label>Credit Card</label><input type="text" name="card_no" value="Get From Database"></div>
-          <div style="display: flex; align-items: center; justify-content: flex-end; padding: 30px;"><button style="padding: 5px; cursor: pointer;" type="submit">Save</button></div>
+          <div style="display: flex; align-items: center; justify-content: flex-end; padding: 30px;">
+            <button style="padding: 5px; cursor: pointer;" type="submit">Save</button>
+          </div>
         </form>
       </div>
     </div>
   </div>
+
+  <div>
+    <a href="">Delete Account</a>
+  </div>
+
 </div>
 
 </body>
