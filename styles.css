@@ -368,9 +368,42 @@ body {
 	align-items: center;
 }
 .topnav input[type=text] {
-  padding: 6px;
-  margin-top: 8px;
-  margin-right: 16px;
-  font-size: 17px;
-	border: none;
+	padding: 6px;
+	font-size: 17px;
+	/*border: none;*/
+}
+
+/*######## PROFILE ##############*/
+
+.feature-display {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	min-height: 50vh; 
+}
+.display-pic {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	max-width: 25vh;
+}
+.display-pic img {
+	border: 3px dotted green;
+	padding: 20px;
+}
+.display-pic .upload {
+	display: flex;
+    flex-direction: column;
+    max-width: 25vh;
+}
+.display-text {
+	max-width: 50vh;
+}
+.display-info {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	min-height: 40vh; 
 }
