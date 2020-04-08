@@ -32,7 +32,7 @@
 	<div class="wrapper" style="min-height: 90vh">
 		<h1><?php echo $my_package['name']; ?></h1>
 		<p>Insert Necessary Details here</p>
-		<button><a href="insert.php">Book Now!</a></button>
+		<button><a href="index2.php">Book Now!</a></button>
 	</div>
 
 	<div>

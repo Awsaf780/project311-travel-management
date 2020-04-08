@@ -26,7 +26,7 @@ include'config.php';
 	  echo "Opps error!";
 
 	}
-
+}
 
 
 ?>

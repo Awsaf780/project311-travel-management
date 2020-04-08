@@ -1,5 +1,5 @@
 <?php
-	include_once 'insret.php';
+	include_once 'insert.php';
 ?>
 
 <!DOCTYPE html>
