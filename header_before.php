@@ -9,7 +9,7 @@
 		<nav class="main-nav">
 			<ul class="main-nav-list">
 				<li>
-					<a href="#">About us</a>
+					<a href="about_us.php">About us</a>
 				</li>
 				<li>
 					<a href="terms.php">Terms</a>
