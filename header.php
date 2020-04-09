@@ -7,7 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
  <header class="profile-header">
-	<div class="container">
+	<div class="container-header">
 		<h1 class="mh-logo-profile">
 			<a href="welcome.php">Homepage</a>
 		</h1>

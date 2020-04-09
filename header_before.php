@@ -2,7 +2,7 @@
 	<link rel="stylesheet" type="text/css" href="styles.css">
 </head>
  <header class="main-header">
-	<div class="container">
+	<div class="container-header">
 		<h1 class="mh-logo">
 			<a href="index.php">Travel</a>
 		</h1>

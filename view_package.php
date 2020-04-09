@@ -25,20 +25,53 @@
 	<title><?php echo $my_package['name']; ?></title>
 </head>
 <body>
-	<div>
-		<?php include 'header.php'; ?>
+
+<div>
+	<?php include 'header.php'; ?>
+</div>
+
+<div class="wrapper-view-package">
+
+	<div class="view-box">
+
+		<div class="package-text">
+			<h1 style="color: grey"><?php echo $my_package['name']; ?></h1>
+			
+			<table>
+				<tr>
+					<th>Attractions</th>
+					<th><?php echo $my_package['attractions']; ?></th>
+				</tr>
+				<tr>
+					<td>Destination</td>
+					<td><?php echo $my_package['destination']; ?></td>
+				</tr>
+				<tr>
+					<td>Cost</td>
+					<td>BDT <?php echo $my_package['cost']; ?></td>
+				</tr>
+				<tr>
+					<td>Duration</td>
+					<td><?php echo $my_package['duration']; if($my_package['duration']==1){echo " Day";}else{echo " Days";}?></td>
+				</tr>
+
+			</table>
+		</div>
+		<div class="package-img">
+			<?php echo '<img src="images/package/'.$my_package['imagename'].'.svg">'; ?>
+		</div>
+
 	</div>
 
-	<div class="wrapper" style="min-height: 90vh">
-		<h1><?php echo $my_package['name']; ?></h1>
-		<p>Insert Necessary Details here</p>
-		<button><a href="index2.php">Book Now!</a></button>
+	<div class="view-button">
+		<?php echo '<a class="a-button" href="index2.php?id='.$my_package['id'].'">' ?> Book Now! </a>
+	</div>	
 
-	</div>
+</div>
 
-	<div>
-		<?php include 'footer.php'; ?>
-	</div>
+<div>
+	<?php include 'footer.php'; ?>
+</div>
 
 </body>
 </html>

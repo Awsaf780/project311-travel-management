@@ -43,16 +43,6 @@ if(isset($_POST['but_upload'])){
 
   <div class="feature-display">
 
-    <div class="display-pic">
-      <img style="max-height: 20vh" src='<?php echo $profile_pic; ?>' >
-      <form method="post" action="" enctype='multipart/form-data'>
-        <div class="upload">
-          <input style="padding: 5px; cursor: pointer;" type='file' name='file' />
-          <input style="padding: 5px; cursor: pointer;" type='submit' value='Upload' name='but_upload'>  
-        </div>
-      </form>
-    </div>  
-
     <div class="register-text">
       <div><h4>About</h4><hr></div>
       <div>
@@ -68,6 +58,18 @@ if(isset($_POST['but_upload'])){
         </form>
       </div>
     </div>
+
+    <div class="display-pic">
+      <img style="max-height: 20vh" src='<?php echo $profile_pic; ?>' >
+      <form method="post" action="" enctype='multipart/form-data'>
+        <div class="upload">
+          <input style="padding: 5px; cursor: pointer;" type='file' name='file' />
+          <input style="padding: 5px; cursor: pointer;" type='submit' value='Upload' name='but_upload'>  
+        </div>
+      </form>
+      <span style="font-size: 0.6em">( Choose Picture from images/avatar/ )</span>
+    </div>  
+
   </div>
 
   <div>
