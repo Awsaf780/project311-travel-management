@@ -247,6 +247,9 @@ body {
 	justify-content: center;
 	align-items: center;
 }
+.card-text h6:hover {
+	color: black;
+}
 .cardlet .card-star {
 	min-width: 50px;
 	max-width: 50px;
