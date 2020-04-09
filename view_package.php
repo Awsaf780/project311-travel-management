@@ -36,7 +36,7 @@
 
 		<div class="package-text">
 			<h1 style="color: grey"><?php echo $my_package['name']; ?></h1>
-			
+
 			<table>
 				<tr>
 					<th>Attractions</th>
@@ -64,8 +64,8 @@
 	</div>
 
 	<div class="view-button">
-		<?php echo '<a class="a-button" href="index2.php?id='.$my_package['id'].'">' ?> Book Now! </a>
-	</div>	
+		<?php echo '<a class="a-button" href="booking.php?id='.$my_package['id'].'">' ?> Book Now! </a>
+	</div>
 
 </div>
 
