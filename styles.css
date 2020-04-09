@@ -29,7 +29,7 @@ body {
 
 /*########### HEADER BEFORE ##############*/
 
-.main-header .container {
+.main-header .container-header {
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
@@ -65,7 +65,7 @@ body {
 
 /*########### HEADER PROFILE ##############*/
 
-.profile-header .container {
+.profile-header .container-header {
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
@@ -407,3 +407,68 @@ body {
 	align-items: center;
 	min-height: 40vh; 
 }
+
+/*######## View Package ############*/
+
+.wrapper-view-package {
+	min-height: 90vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.wrapper-view-package .a-button {
+    padding: 20px 80px;
+    background: var(--main-color-theme);
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    min-width: 40%;
+}
+.wrapper-view-package .a-button:hover {
+	text-decoration: none;
+    background: grey;
+}
+.wrapper-view-package img {
+	max-width: 300px;
+	min-width: 300px;
+}
+.wrapper-view-package .view-box {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	min-height: 50vh;
+	min-width: 70%;
+	margin-top: 7vh;
+}
+.view-box .package-text {
+	min-height: 300px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;	
+	align-items: center;
+	margin-top: 20px;
+}
+.view-button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 30vh;
+}
+.package-text table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.package-text th, td {
+  text-align: center;
+  padding: 12px;
+  color: grey;
+}
+
+.package-text tr:nth-child(even){background-color: #f2f2f2}
+
+.package-text th {
+  background-color: var(--main-color-theme);
+  color: white;
+}
+.package-text tr:hover {background-color: #c1f0c1;}

@@ -1,18 +1,11 @@
 <?php
 
-	$conn = mysqli_connect("localhost", "root", "", 'project_311');
-
-	if(!$conn) {
-		die("Connection Error " . mysqli_connect_error());
-	}
+	include 'header.php';
 
  ?>
  <!DOCTYPE html>
 <html>
 <style>
-body {
- font-family: Arial;
-}
 
 input[type=text], select {
  width: 100%;
