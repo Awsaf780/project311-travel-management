@@ -472,3 +472,7 @@ body {
   color: white;
 }
 .package-text tr:hover {background-color: #c1f0c1;}
+.package-desc {
+	max-width: 70%;
+	margin: 30px;
+}
