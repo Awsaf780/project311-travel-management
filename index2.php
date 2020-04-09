@@ -110,6 +110,7 @@ div.container {
 		<input type="text" name="num_person" placeholder="total person" required><br>
 		<input type="date" name="travel_date" placeholder="travel_date" required><br>
 		<input type="submit" name="insert" value="submit">
+	
     </form>
     <div>
       <?php include 'footer.php'; ?>
