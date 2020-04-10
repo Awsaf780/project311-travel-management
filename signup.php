@@ -3,6 +3,7 @@
 
   $fullname = $username = $pass = $card_no = $email = '';
   $errors = array('fullname'=>'', 'username'=>'','pass'=>'', 'card_no'=>'', 'email'=>'');
+  $exist = "";
 
   if (isset($_POST['submit'])) {
 
@@ -68,7 +69,7 @@
           exit;
         }
         else {
-          echo "Username Exists";
+          $exist = "This Username Already Exists";
         }
 
     }
@@ -99,7 +100,7 @@
 
             <div class="register-form">
               <label for="usr">Full Name</label>
-              <input type="text" id="usr" name="fullname" required placeholder="John Doe">
+              <input type="text" id="usr" pattern="\w+\s\w+" title="First and Last Name" name="fullname" required placeholder="John Doe">
             </div>
             <div class="register-form">
               <label for="subj">Username</label>
@@ -107,7 +108,7 @@
             </div>
             <div class="register-form">
               <label for="clas">Password</label>
-              <input type="password" name="pass" required placeholder="********">
+              <input type="password" pattern="\w{6,}" title="Atleast 6 characters" name="pass" required placeholder="********">
             </div>
             <div class="register-form">
               <label for="tst">Email</label>
@@ -115,13 +116,15 @@
             </div>
             <div class="register-form">
               <label for="scr">Credit Card No</label>
-              <input type="number" id="scr" name="card_no" required placeholder="1111222233334444">
+              <input type="text" id="scr" pattern="[0-9]{16}" title="Must be 16 Digits" name="card_no" required placeholder="1111222233334444">
             </div>
             <div class="register-form">
               <label for=""></label>
               <input type="submit" id="submit" name="submit" value="REGISTER" href="#">
             </div>
-
+            <div>
+              <h6 style="color: white"><?php echo $exist; ?></h6>
+            </div>
           </form>
         </div>
 
