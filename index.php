@@ -23,10 +23,10 @@
 		}
 	}
 
-	$package_query = "SELECT * FROM package GROUP BY destination LIMIT 4";
+	$package_query = "SELECT * FROM package GROUP BY destination LIMIT 8";
 	$package_result = mysqli_query($conn, $package_query);
 
-	$hotel_query = "SELECT DISTINCT * FROM hotel LIMIT 6";
+	$hotel_query = "SELECT DISTINCT * FROM hotel LIMIT 12";
 	$hotel_result = mysqli_query($conn, $hotel_query);
 
 
@@ -123,7 +123,7 @@
 								</div>
 
 								<div class="card-text">
-									<h5>'.$row2['name'].'</h5>
+									<h6>'.$row2['name'].'</h6>
 								</div>
 								<div class="card-star">';
 									for ($i=0; $i < $row2['stars']; $i++) {
