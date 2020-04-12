@@ -6,7 +6,6 @@
   if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $search_package = mysqli_real_escape_string($conn,$_POST['search_text']);
 
-    // $package_query = 'SELECT * FROM package WHERE name like "%'.$search_package.'%"';
     $package_query = 'SELECT * FROM package WHERE name LIKE "%'.$search_package.
     '%" OR (attractions LIKE "%'. $search_package .
     '%") OR (destination LIKE "%'. $search_package .'%")';
@@ -25,7 +24,7 @@
       <title>Home</title>
    </head>
 
-   <body>
+   <body onload="myFunction()" style="margin:0">
 
      <div class="header">
        <?php include 'header.php'; ?>
@@ -55,7 +54,9 @@
 
        </form>
 
-       <div class="feature-package">
+      <div id="loader"></div>
+
+       <div class="feature-package  animate-bottom" id="myDiv" style="display: none">
          <?php
          if (mysqli_num_rows($package_result) > 0 ) {
            while ($row1 = mysqli_fetch_assoc($package_result)) {
@@ -89,6 +90,19 @@
       <div>
         <?php include 'footer.php'; ?>
       </div>
+
+      <script>
+        var myVar;
+
+        function myFunction() {
+          myVar = setTimeout(showPage, 500);
+        }
+
+          function showPage() {
+          document.getElementById("loader").style.display = "none";
+          document.getElementById("myDiv").style.display = "flex";
+        }
+      </script>
 
    </body>
 
