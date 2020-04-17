@@ -51,9 +51,15 @@ div.container {
   </head>
   <body>
 
+		    <label for="package_id"><b>Your Package ID</b></label>
+				<select input type="text"  name="package_id" required>
+					<option value="<?php echo $packid; ?>" ><?php echo $packid; ?></option>
+
+				</select>
+
 	<form  action="insert.php" method="post">
 
-		<label for="hotel_id"><b>hotel number?</b></label>
+		<label for="hotel_id"><b>Choose Hotel</b></label>
 		<select input type="text"  name="hotel_id" required>
 
 			<?php
@@ -68,14 +74,9 @@ div.container {
 		<br>
 
 
-    <label for="package_id"><b>package</b></label>
-		<select input type="text"  name="package_id" required>
-			<option value="<?php echo $packid; ?>" ><?php echo $packid; ?></option>
-
-		</select>
 		<br>
 
-    <label for="transport_id"><b>which transport do you prefer?</b></label>
+    <label for="transport_id"><b>Choose Transport</b></label>
 		<select input type="text"  name="transport_id" required>
 			<?php
 				while($row1=mysqli_fetch_assoc($sql1))
@@ -89,11 +90,11 @@ div.container {
 
 		</select>
     <br>
-	<label for="transaction_id"><b>transaction_id</b></label>
-    <input type="text" name="transaction_id" placeholder="transaction_id" ><br>
+	<label for="Transaction Id"><b>transaction_id</b></label>
+    <input type="text" name="transaction_id" placeholder="optional" ><br>
 
 
-	<label for="transport_type"><b>choose transport type</b></label>
+	<label for="transport_type"><b>Transport Type</b></label>
 		  <select input type="text"  name="transport_type" required>
 			<option value="Air" >Air</option>
 			<option value="Water" >Water</option>
@@ -101,7 +102,7 @@ div.container {
 		  </select>
 
 
-	<label for="num_person"><b>total_person</b></label>
+	<label for="num_person"><b>Number Of People</b></label>
 
 	<input type="text" name="num_person" placeholder="total_person" required><br>
 	<label for="travel_date"><b>travel_date</b></label><br>
