@@ -7,7 +7,7 @@
 	$qur="SELECT id,name FROM hotel WHERE hotel.address = (SELECT destination FROM package WHERE package.id like '$packid');";
 	$relt = mysqli_query($conn,$qur);
 	$qur1= "(SELECT id,route FROM transport WHERE locate((SELECT package.destination FROM package WHERE package.id ='$packid'),route));";
-
+$transaction_id=substr(md5(rand()),0,7);
 	$sql1=mysqli_query($conn,$qur1);
 
 
@@ -91,7 +91,7 @@ div.container {
 		</select>
     <br>
 	<label for="Transaction Id"><b>transaction_id</b></label>
-    <input type="text" name="transaction_id" placeholder="optional" ><br>
+    <input type="$transaction_id" name="transaction_id" placeholder="optional" ><br><br>
 
 
 	<label for="transport_type"><b>Transport Type</b></label>
