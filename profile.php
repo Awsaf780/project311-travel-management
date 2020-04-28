@@ -22,7 +22,7 @@
       <img style="max-height: 20vh" src='<?php echo $profile_pic; ?>' >
       <h1 style="color: grey">FULL NAME</h1>
 
-    </div>  
+    </div>
 
     <div class="register-text">
       <div><h4>User Information</h4><hr></div>
@@ -58,7 +58,7 @@
   <div>
     <?php include 'footer.php'; ?>
   </div>
-  
+
 </body>
 
 </html>
