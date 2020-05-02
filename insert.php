@@ -20,8 +20,8 @@
 
 
 
-	$final = "INSERT INTO `booking` (`id`, `client_id`, `hotel_id`, `package_id`, `transport_id`, `transaction_id`, `transport_type`, `num_person`, `travel_date`)
-	 VALUES (NULL, '$booking_id['id']', '$booking_hotel', '$booking_pakage', '$booking_transport', '$booking_transaction', '$booking_transport_type', '$booking_num_parson', '$booking_date');";
+	$final = "INSERT INTO booking ( client_id, hotel_id, package_id, transport_id, transaction_id, transport_type, num_person, travel_date);
+	 VALUES (".$booking_id['id'].", '".$booking_hotel."', '".$booking_pakage."', '".$booking_transport."', '".$booking_transaction."', '".$booking_transport_type."', '".$booking_num_parson."', '".$booking_date."')";
 
 	$is_inserted = mysqli_query($conn,$final);
 
