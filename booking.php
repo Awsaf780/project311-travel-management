@@ -102,7 +102,6 @@ padding: 20px;
 
 
  <label for="num_person"><b>Number Of People</b></label>
-
  <input type="text" name="num_person" placeholder="total_person" required><br>
  <label for="travel_date"><b>travel_date</b></label><br>
  <input type="date" name="travel_date" placeholder="travel_date" required><br>
