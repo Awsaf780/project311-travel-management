@@ -145,12 +145,21 @@ body {
 .landing .landing-start .login-title {
 	color: white;
 }
-.login-form .login-box, .login-button {
-	border-radius: 5px;
+.login-form .login-box {
 	padding: 6px;
-  margin-top: 8px;
-  margin-right: 16px;
-  font-size: 12px;
+	margin-top: 8px;
+	font-size: 12px;
+	border: 1px dotted;
+	border-style: ridge;
+}
+.login-form .login-button {
+	cursor: pointer;
+    background: #262626;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 5px;
+    margin-top: 20px; 
 }
 
 /*####### INDEX PACKAGE ################*/
@@ -306,6 +315,15 @@ body {
 	justify-content: space-between;
 	align-items: center;
 }
+.register-form #submit {
+	cursor: pointer;
+    background: #262626;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 5px;
+}
+
 /* ############ FOOTER ############### */
 
 .footer {
