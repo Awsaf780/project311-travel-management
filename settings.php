@@ -42,6 +42,11 @@ $mail=$abc['email'];
 $dbc  = $abc['card_no'];
 $ebc=$abc['fullname'];
 $fbc=$abc['address'];
+$tj=mysqli_query($conn, "select * from cardinfo where cardinfo.card_no= '$dbc' ");
+$kbc = mysqli_fetch_assoc($tj);
+$cv=$kbc['cvv'];
+$doe=$kbc['exp'];
+
 ?>
 <?php
 // Editing and updating user info
@@ -86,7 +91,9 @@ exit;}
           <div class="register-form"><label>Phone Number</label><input type="text" id="scr" name="phone" required placeholder="<?php echo $phn ?>"></div>
           <div class="register-form"><label>Full Name</label><input type="text" id="usr" name="fullname" required placeholder="<?php echo $ebc ?>"></div>
           <div class="register-form"><label>Address</label><input type="text" id="usr" name="address" required placeholder="<?php echo $fbc ?>"></div>
-          <div class="register-form"><label>Credit Card</label><?php echo '<input type="text" name="username" readonly value="'.$dbc.'">'; ?></div>
+          <div class="register-form"><label>Credit Card</label><?php echo '<input type="text" name="card" readonly value="'.$dbc.'">'; ?></div>
+          <div class="register-form"><label>Expiration Date</label><?php echo '<input type="text" name="date" readonly value="'.$cv.'">'; ?></div>
+          <div class="register-form"><label>CVV</label><?php echo '<input type="text" name="cardvalidation" readonly value="'.$doe.'">'; ?></div>
           <div style="display: flex; align-items: center; justify-content: flex-end; padding: 30px;">
             <div class="register-form">
               <label for=""></label>
