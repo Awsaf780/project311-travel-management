@@ -2,17 +2,22 @@
 	--main-color-theme : #39ac73;
 
 	/*Copy and Paste one of the color codes to change theme:
-	
-	#2eb8b8 
-	#4da6ff
-	#ff8c1a
-	#e60000
-	#b800e6
+	Alternate colors: 
+
+	#6f6fae purple/violetish 
+	#1d8ea7 Aqua
 	#39ac73 - Default Theme
-	#9999ff
 	*/
 }
+::-moz-selection { 
+  color: white;
+  background: var(--main-color-theme);
+}
 
+::selection {
+  color: white;
+  background: var(--main-color-theme);
+}
 /*####### BASIC ###############*/
 
 body {
@@ -145,12 +150,21 @@ body {
 .landing .landing-start .login-title {
 	color: white;
 }
-.login-form .login-box, .login-button {
-	border-radius: 5px;
+.login-form .login-box {
 	padding: 6px;
-  margin-top: 8px;
-  margin-right: 16px;
-  font-size: 12px;
+	margin-top: 8px;
+	font-size: 12px;
+	border: 1px dotted;
+	border-style: ridge;
+}
+.login-form .login-button {
+	cursor: pointer;
+    background: #262626;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 5px;
+    margin-top: 20px; 
 }
 
 /*####### INDEX PACKAGE ################*/
@@ -267,13 +281,13 @@ body {
 
 .register {
 	background: var(--main-color-theme);
-	height: 87vh;
+	height: 95vh;
 }
 .feature-register {
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-	padding-top: 20vh;
+	padding-top: 15vh;
 }
 .feature-register .register-img {
 	min-height: 50vh;
@@ -281,6 +295,7 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	margin-top: -10vh;
 }
 .register-img img {
 	max-height: 50vh;
@@ -295,17 +310,27 @@ body {
 	color: white;
 }
 .register-text form input {
-	border-radius: 5px;
 	padding: 6px;
-  margin-top: 8px;
-  margin-right: 16px;
-  font-size: 12px;
+	margin-top: 8px;
+	margin-right: 16px;
+	font-size: 12px;
+	border: 1px dotted;
+	border-style: ridge;
 }
 .register-form {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 }
+.register-form #submit {
+	cursor: pointer;
+    background: #262626;
+    color: white;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 5px;
+}
+
 /* ############ FOOTER ############### */
 
 .footer {
@@ -409,6 +434,32 @@ body {
 	justify-content: space-between;
 	align-items: center;
 	min-height: 40vh; 
+}
+.feature-booking table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.feature-booking th, td {
+  text-align: center;
+  padding: 12px;
+  color: grey;
+}
+
+.feature-booking tr:nth-child(odd){background-color: #f2f2f2; }
+
+.feature-booking th {
+  background-color: var(--main-color-theme);
+  color: white;
+  padding: 12px;
+}
+.feature-booking tr:hover {background-color: lightgrey;}
+.editme {
+	padding: 5px 10px;
+	text-decoration: none;
+	background: var(--main-color-theme);
+	color: white;
+	margin-top: -45px;
 }
 
 /*######## View Package ############*/

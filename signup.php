@@ -1,79 +1,42 @@
 <?php
   include 'config.php';
 
-  $fullname = $username = $pass = $card_no = $email = '';
-  $errors = array('fullname'=>'', 'username'=>'','pass'=>'', 'card_no'=>'', 'email'=>'');
   $exist = "";
 
   if (isset($_POST['submit'])) {
 
-    if (empty($_POST['fullname'])) {
-      $errors['fullname'] =  'Name is required';
-    }
-    else{
+    
+    $fullname = mysqli_real_escape_string($conn, $_POST['fullname']);
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $username = mysqli_real_escape_string($conn, $_POST['username']);
+    $pass = mysqli_real_escape_string($conn, $_POST['pass']);
+    $card_no = mysqli_real_escape_string($conn, $_POST['card_no']);
+    $cvv = mysqli_real_escape_string($conn, $_POST['cvv']);
+    $exp = mysqli_real_escape_string($conn, $_POST['exp']);
 
-      $fullname = $_POST['fullname'];
-    }
+    $add_login = "INSERT INTO login (username, pass) VALUES ('$username', '$pass')";
 
-    if (empty($_POST['username'])) {
-      $errors['username'] =  'Username is required';
-    }
-    else{
+    $sql = "INSERT INTO client (fullname, email, username, card_no) VALUES ('$fullname','$email','$username', '$card_no')";
 
-      $username = $_POST['username'];
-    }
+    $result2 = mysqli_query($conn, $sql);
+    $result1 = mysqli_query($conn, $add_login);
 
-    if (empty($_POST['pass'])) {
-      $errors['pass'] = 'Password is required';
-    }
-    else{
-      $pass = $_POST['pass'];
-    }
+    $credit_add = "INSERT INTO cardinfo (card_no, cvv, exp) VALUES ('$card_no', '$cvv', '$exp')";
+    $result3 = mysqli_query($conn, $credit_add);
 
-    if (empty($_POST['card_no'])) {
-      $errors['card_no'] = '16 Digit Card Number is required';
+    if ($result2 && $result1 && $result3) {
+      echo "<script>
+      alert('Inserted Successfully');
+      window.location.href = 'index.php';
+      </script>";
+      exit;
     }
-    else{
-      $card_no = $_POST['card_no'];
-    }
-
-    if (empty($_POST['email'])) {
-      $errors['email'] = 'Email is required';
-    }
-    else{
-      $email = $_POST['email'];
+    else {
+      $exist = "This Username Already Exists";
     }
 
-    if (array_filter($errors)) {
+  }
 
-      }
-      else{
-        $fullname = mysqli_real_escape_string($conn, $_POST['fullname']);
-        $email = mysqli_real_escape_string($conn, $_POST['email']);
-        $username = mysqli_real_escape_string($conn, $_POST['username']);
-        $pass = mysqli_real_escape_string($conn, $_POST['pass']);
-        $card_no = mysqli_real_escape_string($conn, $_POST['card_no']);
-
-        $add_login = "INSERT INTO login (username, pass) VALUES ('$username', '$pass')";
-
-        $sql = "INSERT INTO client (fullname, email, username, card_no) VALUES ('$fullname','$email','$username', '$card_no')";
-
-        $result2 = mysqli_query($conn, $sql);
-        $result1 = mysqli_query($conn, $add_login);
-
-        if ($result2 && $result1) {
-          echo "<script>
-          alert('Inserted Successfully');
-          window.location.href = 'index.php';
-          </script>";
-          exit;
-        }
-        else {
-          $exist = "This Username Already Exists";
-        }
-
-    }
-    }
  ?>
 
 <!DOCTYPE html>
@@ -108,7 +71,7 @@
             </div>
             <div class="register-form">
               <label for="clas">Password</label>
-              <input type="password" pattern="\w{6,}" title="Atleast 6 characters" name="pass" required placeholder="********">
+              <input type="password" name="pass" pattern="\w{6,}" title="Atleast 6 characters" required placeholder="********">
             </div>
             <div class="register-form">
               <label for="tst">Email</label>
@@ -118,6 +81,15 @@
               <label for="scr">Credit Card No</label>
               <input type="text" id="scr" pattern="[0-9]{16}" title="Must be 16 Digits" name="card_no" required placeholder="1111222233334444">
             </div>
+            <div class="register-form">
+              <label for="cvv">Credit Card CVV</label>
+              <input type="text" id="cvv" pattern="[0-9]{3}" title="Must be 3 Digits" name="cvv" required placeholder="360">
+            </div>
+            <div class="register-form">
+              <label for="exp">Credit Card EXP</label>
+              <input type="text" id="exp" pattern="[01][0-9]\/20[2-9][0-9]" title="Must be in mm/yyyy format" name="exp" required placeholder="07/2020">
+            </div>
+
             <div class="register-form">
               <label for=""></label>
               <input type="submit" id="submit" name="submit" value="REGISTER" href="#">
@@ -129,8 +101,8 @@
         </div>
 
         <div style="color: white">
-   				<h5>Already have an account? <a style="color: white; text-decoration: none" href="index.php"><i>Sign In</i></a></h5>
-   			</div>
+          <h5>Already have an account? <a style="color: white; text-decoration: none" href="index.php"><i>Sign In</i></a></h5>
+        </div>
 
       </div>
 
@@ -142,7 +114,7 @@
     </div>
   </div>
   <div>
-		<?php include 'footer.php'; ?>
-	</div>
+    <?php include 'footer.php'; ?>
+  </div>
 </body>
 </html>
