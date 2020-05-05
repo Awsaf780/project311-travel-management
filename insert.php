@@ -29,8 +29,8 @@
 	  echo "Inserted successfully";
 	}
 	else{
-	  echo "Opps error!";
-
+	  //echo "Opps error!"; //since the submit button is not working, i kept the header part below. Will replace it later.
+   header("Location: payment.php");
 	}
 
 

@@ -114,8 +114,8 @@ exit;}
           <div class="register-form"><label>Full Name</label><input type="text" id="usr" name="fullname" value="<?php echo $ebc ?>"></div>
           <div class="register-form"><label>Address</label><input type="text" id="usr" name="address" value="<?php echo $fbc ?>"></div>
           <div class="register-form"><label>Credit Card</label><?php echo '<input type="text" name="card" readonly value="'.$dbc.'">'; ?></div>
-          <div class="register-form"><label>Expiration Date</label><?php echo '<input type="text" name="date" readonly value="'.$cv.'">'; ?></div>
-          <div class="register-form"><label>CVV</label><?php echo '<input type="text" name="cardvalidation" readonly value="'.$doe.'">'; ?></div>
+          <div class="register-form"><label>CVV</label><?php echo '<input type="text" name="date" readonly value="'.$cv.'">'; ?></div>
+          <div class="register-form"><label>Expiration Date</label><?php echo '<input type="text" name="cardvalidation" readonly value="'.$doe.'">'; ?></div>
           <div style="display: flex; align-items: center; justify-content: flex-end; padding: 30px;">
             <div class="register-form">
               <label for=""></label>
@@ -147,7 +147,7 @@ exit;}
        <input type='submit' id = 'submit' name='delete' value='Delete Account' href='#'>
        </div>
      </form>
-
+     
   </div>
 
 </div>
