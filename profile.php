@@ -7,7 +7,7 @@ $rj=mysqli_query($conn, "select * from client where client.username= '$login_ses
 $abc = mysqli_fetch_assoc($rj);
 $bbc =  $abc['email'];
 $cbc= $abc['phone'];
-$dbc = $abc['card_no'];
+$dbc  = $abc['card_no'];
 $ebc=$abc['fullname'];
 
 ?>
