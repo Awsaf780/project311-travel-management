@@ -18,9 +18,6 @@ $ebc=$abc['fullname'];
   <title>Profile</title>
 </head>
 <body>
-  <div>
-
-  </div>
 
 <div class="wrapper" style="margin: 5vh 25vh; min-height: 90vh">
 
@@ -43,7 +40,7 @@ $ebc=$abc['fullname'];
         <div class="register-form"><label>Credit Card</label><?php echo '<input type="text" name="username" readonly value="'.$dbc.'">'; ?></div>
       </form>
         <div style="display: flex; align-items: center; justify-content: flex-end; padding: 30px;">
-          <button style=" cursor: pointer;"><a href=<?php echo "settings.php?username=" . $login_session; ?>>Edit Info</a></button>
+          <a class="editme" href=<?php echo "settings.php?username=" . $login_session; ?>>Edit Info</a>
         </div>
 
 
@@ -70,24 +67,8 @@ WHERE username= '$login_session')" );
 
 
       ?>
-  </div>
-  <!DOCTYPE html>
-  <html>
-  <head>
 
-  </head>
-  <body>
-
-  <div>
-
-  </div>
-
-
-
-  	<div class="view-box">
-
-  		<div class="package-text">
-  			<h1 style="color: black"><?php echo 'Booking History';?></h1>
+  			<h1 style="color: black; text-align: center;"><?php echo 'Booking History';?></h1>
         <table>
   				<tr>
             <th>Serial</th>
@@ -113,16 +94,10 @@ if(mysqli_num_rows($booking_result) > 0)
 ?>
 
   			</table>
-  		</div>
-    </body>
-  </html>
-  <div class="feature-booking">
-  <h3>   </h3>
-  </div>
-
-
 
 </div>
+</div>
+
   <div>
     <?php include 'footer.php'; ?>
   </div>

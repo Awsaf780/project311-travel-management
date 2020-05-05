@@ -34,6 +34,7 @@ if(isset($_POST['but_upload'])){
 ?>
 
 <?php
+
 // Editing and updating user info
 $rj=mysqli_query($conn, "select * from client where client.username= '$login_session' ");
 $abc = mysqli_fetch_assoc($rj);
@@ -46,6 +47,27 @@ $tj=mysqli_query($conn, "select * from cardinfo where cardinfo.card_no= '$dbc' "
 $kbc = mysqli_fetch_assoc($tj);
 $cv=$kbc['cvv'];
 $doe=$kbc['exp'];
+//deleting account
+if (isset ($_POST['delete']))
+{
+ $delete="delete from cardinfo where card_no='$dbc'";
+ $del_query=mysqli_query($conn,$delete);
+ $delete_tran="delete from transactions where transactions.id=ANY(
+ select transaction_id FROM booking WHERE booking.client_id=
+ (select client.id from client where client.username='$login_session'))";
+ $delete_tran_query=mysqli_query($conn,$delete_tran);
+ $delete_client="delete from client where client.username='$login_session'";
+ $delete_client_query=mysqli_query($conn,$delete_client);
+ $delete_login="delete from login where login.username='$login_session'";
+ $delete_login_query=mysqli_query($conn,$delete_login);
+
+
+
+ if($del_query AND $delete_tran_query AND $delete_client_query AND $delete_login_query){
+   header("Location: index.php");
+ } else { header("Location: settings.php");}
+
+}
 
 ?>
 <?php
@@ -87,10 +109,10 @@ exit;}
         <form style="width: 45vh" action="settings.php" method="POST">
 
           <div class="register-form"><label>Username</label><?php echo '<input type="text" name="username" readonly value="'.$login_session.'">'; ?></div>
-          <div class="register-form"><label>Email</label><input type="Email" name="email" required placeholder="<?php echo $mail ?>"></div>
-          <div class="register-form"><label>Phone Number</label><input type="text" id="scr" name="phone" required placeholder="<?php echo $phn ?>"></div>
-          <div class="register-form"><label>Full Name</label><input type="text" id="usr" name="fullname" required placeholder="<?php echo $ebc ?>"></div>
-          <div class="register-form"><label>Address</label><input type="text" id="usr" name="address" required placeholder="<?php echo $fbc ?>"></div>
+          <div class="register-form"><label>Email</label><input type="Email" name="email" value="<?php echo $mail ?>"></div>
+          <div class="register-form"><label>Phone Number</label><input type="text" id="scr" name="phone" value="<?php echo $phn ?>"></div>
+          <div class="register-form"><label>Full Name</label><input type="text" id="usr" name="fullname" value="<?php echo $ebc ?>"></div>
+          <div class="register-form"><label>Address</label><input type="text" id="usr" name="address" value="<?php echo $fbc ?>"></div>
           <div class="register-form"><label>Credit Card</label><?php echo '<input type="text" name="card" readonly value="'.$dbc.'">'; ?></div>
           <div class="register-form"><label>Expiration Date</label><?php echo '<input type="text" name="date" readonly value="'.$cv.'">'; ?></div>
           <div class="register-form"><label>CVV</label><?php echo '<input type="text" name="cardvalidation" readonly value="'.$doe.'">'; ?></div>
@@ -119,7 +141,13 @@ exit;}
   </div>
 
   <div>
-    <a href="">Delete Account</a>
+
+<form style="width: 45vh" action="settings.php" method="POST">
+     <div style="display: flex; align-items: center; justify-content: flex-end; padding: 30px;">
+       <input type='submit' id = 'submit' name='delete' value='Delete Account' href='#'>
+       </div>
+     </form>
+
   </div>
 
 </div>
