@@ -49,7 +49,7 @@ padding: 20px;
 
  </head>
  <body>
-	  <form  action="insert.php" method="post">
+	  <form  action="insert.php?package_id='',hotel_id='',transport_id='',transaction_id='',travel_date=''" method="GET">
 
 			 <label for="package_id"><b>Your Package ID</b></label>
 			 <select input type="text"  name="package_id" required>

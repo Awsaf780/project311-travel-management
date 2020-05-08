@@ -1,10 +1,8 @@
 <?php
 include("config.php");
 include ("header.php");
-if(isset($_POST['pay_m']))
-{
-  
-}
+
+
 
 
 
