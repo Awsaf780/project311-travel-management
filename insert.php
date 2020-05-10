@@ -49,7 +49,7 @@ $tcostll=$tcost['price'];
 $pcostl=mysqli_query($conn,"select package.cost FROM package where id='$booking_pakage'");
 $pcost=mysqli_fetch_assoc($pcostl);
 $pcostll=$pcost['cost'];
-$total_amount= (($hcostll+$tcostll+$pcostll)*30/100);
+$total_amount= ((($hcostll+$tcostll+$pcostll)*30/100)*$booking_num_parson);
 
 ?>
 <?php
