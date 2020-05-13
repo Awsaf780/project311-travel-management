@@ -2,6 +2,7 @@
   include 'config.php';
 
   $exist = "";
+  $cvv = rand(111,999);
 
   if (isset($_POST['submit'])) {
 
@@ -11,7 +12,6 @@
     $username = mysqli_real_escape_string($conn, $_POST['username']);
     $pass = mysqli_real_escape_string($conn, $_POST['pass']);
     $card_no = mysqli_real_escape_string($conn, $_POST['card_no']);
-    $cvv = mysqli_real_escape_string($conn, $_POST['cvv']);
     $exp = mysqli_real_escape_string($conn, $_POST['exp']);
 
     $add_login = "INSERT INTO login (username, pass) VALUES ('$username', '$pass')";
@@ -25,9 +25,12 @@
     $result3 = mysqli_query($conn, $credit_add);
 
     if ($result2 && $result1 && $result3) {
+
+      $_SESSION['login_user'] = $username;
+
       echo "<script>
-      alert('Inserted Successfully');
-      window.location.href = 'index.php';
+      alert('Account Created Successfully');
+      window.location.href = 'profile.php';
       </script>";
       exit;
     }
@@ -80,10 +83,6 @@
             <div class="register-form">
               <label for="scr">Credit Card No</label>
               <input type="text" id="scr" pattern="[0-9]{16}" title="Must be 16 Digits" name="card_no" required placeholder="1111222233334444">
-            </div>
-            <div class="register-form">
-              <label for="cvv">Credit Card CVV</label>
-              <input type="text" id="cvv" pattern="[0-9]{3}" title="Must be 3 Digits" name="cvv" required placeholder="360">
             </div>
             <div class="register-form">
               <label for="exp">Credit Card EXP</label>
