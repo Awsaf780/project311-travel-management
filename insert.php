@@ -24,7 +24,15 @@
   $finding_count=mysqli_query($conn,"select id from booking ORDER BY id DESC LIMIT 1");
   $finding_count_2=mysqli_fetch_assoc($finding_count);
   $finding_count_3=$finding_count_2['id'];
-  $finding_count_final=$finding_count_3+1;
+  if(is_null($finding_count_3))
+  {
+    $finding_count_final=1;
+  }
+  else
+  {
+    $finding_count_final=$finding_count_3+1;
+  }
+
 
 
   ?>
@@ -41,7 +49,7 @@ $tcostll=$tcost['price'];
 $pcostl=mysqli_query($conn,"select package.cost FROM package where id='$booking_pakage'");
 $pcost=mysqli_fetch_assoc($pcostl);
 $pcostll=$pcost['cost'];
-$total_amount= (($hcostll+$tcostll+$pcostll)*30/100);
+$total_amount= ((($hcostll+$tcostll+$pcostll)*30/100)*$booking_num_parson);
 
 ?>
 <?php

@@ -92,6 +92,23 @@ if($ans)
 
 exit;}
 }
+if (isset($_POST['save']))
+{
+  $getoldpass=mysqli_query($conn,"select pass from login where login.username='$login_session'");
+  $getoldpass1=mysqli_fetch_assoc($getoldpass);
+
+  if(($_POST['newpass']==$_POST['re_newpass']) AND ($_POST['currpass']==$getoldpass1['pass']))
+  {
+    $newpassword=$_POST['newpass'];
+    $updatepass=mysqli_query($conn,"update login set pass='$newpassword' where username='$login_session'");
+    echo "Pasword Updated Successfully!";
+  }
+  else
+  {
+    echo "failed! Try again!";
+
+  }
+}
 
 ?>
 <!DOCTYPE html>
@@ -104,7 +121,7 @@ exit;}
   <div class="feature-display">
 
     <div class="register-text">
-      <div><h4>About</h4><hr></div>
+      <div><h4>Edit user information</h4><hr></div>
       <div>
         <form style="width: 45vh" action="settings.php" method="POST">
 
@@ -124,6 +141,21 @@ exit;}
 
           </div>
         </form>
+      </div>
+      <div><h4>To change password:</h4><hr></div>
+      <div>
+      <form style="width: 45vh" action="settings.php" method="POST">
+        <div class="register-form"><label>Enter current password</label><input type="password" id="scr" name="currpass" value=""></div>
+        <div class="register-form"><label>Enter new password</label><input type="password" id="scr" name="newpass" value=""></div>
+        <div class="register-form"><label>Re-enter new password</label><input type="password" id="scr" name="re_newpass" value=""></div>
+        <div style="display: flex; align-items: center; justify-content: flex-end; padding: 30px;">
+          <div class="register-form">
+            <label for=""></label>
+            <input type="submit" id="submit" name="save" value="Save" href="#">
+          </div>
+
+        </div>
+      </form>
       </div>
     </div>
 
@@ -147,7 +179,7 @@ exit;}
        <input type='submit' id = 'submit' name='delete' value='Delete Account' href='#'>
        </div>
      </form>
-     
+
   </div>
 
 </div>
