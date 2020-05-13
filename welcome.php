@@ -1,6 +1,8 @@
 <?php
   include 'config.php';
-
+  header('Cache-Control: no cache');
+  session_cache_limiter('private_no_expire'); 
+  
   $search_package = "*";
 
   if ($_SERVER["REQUEST_METHOD"] == "POST") {

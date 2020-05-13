@@ -5,7 +5,7 @@
  $packid=$_GET['id'];
  $qur="SELECT id,name FROM hotel WHERE hotel.address = (SELECT destination FROM package WHERE package.id like '$packid');";
  $relt = mysqli_query($conn,$qur);
- $qur1= "(SELECT id,route FROM transport WHERE locate((SELECT package.destination FROM package WHERE package.id ='$packid'),route));";
+ $qur1= "(SELECT * FROM transport WHERE locate((SELECT package.destination FROM package WHERE package.id ='$packid'),route));";
 $transaction_id=substr(md5(rand()),0,7);
  $sql1=mysqli_query($conn,$qur1);
 
@@ -81,7 +81,7 @@ padding: 20px;
 			 while($row1=mysqli_fetch_assoc($sql1))
 			 {
 		 ?>
-			 <option value="<?php echo $row1['id']; ?>" ><?php echo $row1['id'];echo "  ";echo $row1['route']; ?></option>
+			 <option value="<?php echo $row1['id']; ?>" ><?php echo "(" .$row1['type'] . ") ".  $row1['name']; ?></option>
 		 <?php
 			 }
 		 ?>
@@ -93,16 +93,8 @@ padding: 20px;
 	 <input type="$transaction_id" name="transaction_id" value="<?php echo $transaction_id ?>" readonly ><br><br>
 
 
- <label for="transport_type"><b>Transport Type</b></label>
-		 <select input type="text"  name="transport_type" required>
-		 <option value="Air" >Air</option>
-		 <option value="Water" >Water</option>
-		 <option value="Bus" >Bus</option>
-		 </select>
-
-
  <label for="num_person"><b>Number Of People</b></label>
- <input type="text" name="num_person" placeholder="total_person" required><br>
+ <input type="text" name="num_person" value="1" required><br>
  <label for="travel_date"><b>travel_date</b></label><br>
  <input type="date" name="travel_date" placeholder="travel_date" required><br>
  <input type="submit" name="insert" value="submit">
