@@ -16,10 +16,21 @@
 	$booking_pakage =  $_GET['package_id'];
 	$booking_transport =  $_GET['transport_id'];
 	$booking_transaction =  $_GET['transaction_id'];
-	$booking_transport_type =  $_GET['transport_type'];
 	$booking_num_parson =  $_GET['num_person'];
 	$booking_date =  $_GET['travel_date'];
   $booking_clientid=$booking_id['id'];
+
+  $check_type = substr($booking_transport, 0, 3);
+
+  if ($check_type == "AIR") {
+    $booking_transport_type =  "Air";
+  }
+  elseif ($check_type == "WTR") {
+    $booking_transport_type =  "Water";
+  }
+  elseif ($check_type == "BUS") {
+    $booking_transport_type =  "Bus";
+  }
 
   $finding_count=mysqli_query($conn,"select id from booking ORDER BY id DESC LIMIT 1");
   $finding_count_2=mysqli_fetch_assoc($finding_count);
