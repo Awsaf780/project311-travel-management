@@ -92,16 +92,22 @@ if($ans)
 
 exit;}
 }
+//changing password
 if (isset($_POST['save']))
 {
   $getoldpass=mysqli_query($conn,"select pass from login where login.username='$login_session'");
   $getoldpass1=mysqli_fetch_assoc($getoldpass);
 
-  if(($_POST['newpass']==$_POST['re_newpass']) AND ($_POST['currpass']==$getoldpass1['pass']))
+  if(($_POST['newpass']==$_POST['re_newpass']) AND ($_POST['currpass']==$getoldpass1['pass']) )
   {
     $newpassword=$_POST['newpass'];
-    $updatepass=mysqli_query($conn,"update login set pass='$newpassword' where username='$login_session'");
-    echo "Pasword Updated Successfully!";
+    if(!empty($newpassword))
+    {
+      $updatepass=mysqli_query($conn,"update login set pass='$newpassword' where username='$login_session'");
+      echo "Pasword Updated Successfully!";
+      
+    }
+    else echo "failed! Try again!";
   }
   else
   {

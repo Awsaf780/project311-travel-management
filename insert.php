@@ -60,8 +60,19 @@ $tcostll=$tcost['price'];
 $pcostl=mysqli_query($conn,"select package.cost FROM package where id='$booking_pakage'");
 $pcost=mysqli_fetch_assoc($pcostl);
 $pcostll=$pcost['cost'];
-$total_amount= ((($hcostll+$tcostll+$pcostll)*30/100)*$booking_num_parson);
 
+$searchingolderbooking=mysqli_query($conn,"select booking.client_id from booking where client_id='$booking_clientid'");
+$searchingolderbooking1=mysqli_fetch_assoc($searchingolderbooking);
+$searchingolderbooking2=$searchingolderbooking1['client_id'];
+if(is_null($searchingolderbooking2))
+{
+  $total_amount=(((($hcostll+$tcostll+$pcostll)-(($hcostll+$tcostll+$pcostll)*15/100))*30/100)*$booking_num_parson);
+  echo "Dear client, you got 15% flat discount as this is your first booking. Please complete your payment. Thank you!";
+}
+else
+{
+  $total_amount= ((($hcostll+$tcostll+$pcostll)*30/100)*$booking_num_parson);
+}
 ?>
 <?php
 include 'config.php';
