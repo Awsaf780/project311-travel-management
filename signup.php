@@ -26,11 +26,9 @@
 
     if ($result2 && $result1 && $result3) {
 
-      $_SESSION['login_user'] = $username;
-
       echo "<script>
       alert('Account Created Successfully');
-      window.location.href = 'profile.php';
+      window.location.href = 'index.php';
       </script>";
       exit;
     }
